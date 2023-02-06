@@ -1,7 +1,7 @@
 # viren_eportfolio
 
 * Deployment URL: https://viren-malavia-eportfolio.netlify.app/
-* Git URL: 
+* Git URL: https://github.com/viren242/viren_portfolio
 
 ## Authors
 
