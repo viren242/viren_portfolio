@@ -1,0 +1,815 @@
+/*For Navigation-Bar and different Pages/Sections of the Portfolio*/
+body{
+	margin:0;
+	padding: 0;
+	font-family: Arial, Helvetica;
+}
+
+.navbar{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background-color: #d4d7de;
+	width: 100%;
+	height: 70px;
+	z-index: 1;
+	/* To Apply Shadow Effect Use The Below Code:
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);*/
+}
+
+.nav-all{
+	margin-right: 15%;
+}
+
+/*
+This code was used in a youtube video to apply animation to our nav but it seems it still works without it so I have not used it  
+nav{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);		
+}*/
+
+nav ul{
+	display: flex;
+	justify-content: right;
+	list-style: none;
+}
+
+/*
+This is another way to align your navigation bar in a row manner (like in a straight line)
+
+nav ul{
+	list-style: none;
+}
+
+nav ul li{
+	display: inline-flex;
+}*/
+
+nav ul li a{
+	/*
+	Use the below display if you use Animation-#2 code
+	display: inline-block;*/
+	position: relative;
+	margin: 9px 2px;
+	padding: 6px 13px;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	/* To Apply Shadow Effect Use The Below Code:
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,0.1);*/
+	/*
+	Use the below code for another way to align the text in center for the navigation menu:
+	display: inline-block;
+	text-align: center;*/
+}
+
+nav ul li a:hover{
+	color: #ffffff;
+	background: #ff0000;
+	border-radius: 3px;
+	transition: all ease-in-out 250ms;
+}
+
+/*To Add Animation on hover use below code:*/
+
+nav ul li a::after{
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%) scaleX(0);
+	-webkit-transform: translateX(-50%) scaleX(0);
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	width: 100%;
+	height: 3px;
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.9);
+	-webkit-transition: transform 250ms;
+	transition: transform 250ms;
+	
+}
+
+nav ul li a:hover::after{
+	-webkit-transform: translateX(-50%) scaleX(1);
+	transform: translateX(-50%) scaleX(1);
+}
+
+/*
+Use the below code for a different Animation which I have named Animation-#2
+
+.nav ul li a::after{
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background: #ffffff;
+	transition: width .3s;
+}
+
+.nav ul li a:hover::after{
+	width: 100%;
+	transition: width .3s;
+}*/
+
+
+
+.logo{
+	font-family: montserrat, Arial, Helvetica;
+	flex: 1 1 auto;
+	margin-left: 10%;
+	letter-spacing: 1px;	
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 35px;
+	color: #000;
+}
+
+.logo a{
+	text-decoration: none;
+	color: #000000;
+}
+
+
+/*The below class ".first" is related in the making of the transparent first page of our web-page*/
+.first{
+	position: relative;
+	background-image: url(../imgs/landscape-photography-of-mountains-covered-in-snow-691668.jpg);
+	width: 100%;
+	height: 130vh;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.about-area,.port-area, .services-area, .contact-area{
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	width: 100%;
+	height: 43.75rem;
+}
+
+.text-part{
+	width: 65%;
+	height: 80%;
+
+}
+
+.text-part h1{
+	font-size: 50px;
+	font-family: Verdana;
+}
+
+.text-part p{
+	font-size: 24px;
+	line-height: 50px;
+}
+
+.about-area, .services-area{
+	background: #fefefe;
+}
+
+.port-area, .contact-area{
+	background: #262626;
+	color: #ffffff;
+}
+
+/*Further Modifications from here*/
+
+#in-touch{
+	color: #00FF66;
+	text-decoration: none;
+}
+
+#in-touch:hover{
+	color: #39B54A;
+}
+
+.about-area{
+	height: 52rem;
+}
+
+.about-me p{
+	position: relative;
+	height: 12.5rem;
+	overflow-y: scroll;
+	font-size: 20px;
+	line-height: 40px;
+	border-style: groove solid solid groove;
+	border-width: 5px;
+	border-radius: 20px 5px 5px 20px;
+	border-color: #707070 #39B54A #39B54A #707070;
+	padding: 3.5px;
+	padding-left: 6px;
+}
+
+.port-area{
+	height: 45rem;
+}
+
+/*
+To hide scroll-bar use this below code for chrome
+
+.about-me p::-webkit-scrollbar{
+	display: none;
+}
+*/
+
+.about-me ul{
+	font-size: 20px;
+	line-height: 28px;
+	list-style-type: none;
+}
+
+.green{
+	color: #39B54A;
+}
+
+.contact-para p{
+	line-height: 42px;
+}
+
+.contact-me-directly{
+	float: left;
+	margin-left: 45px;
+
+}
+
+.contact-me-directly p{
+	margin-left: 30px;
+	line-height: 40px;
+}
+
+.contact-me-directly p a{
+	color: #00FF66;
+	text-decoration: none;
+
+}
+
+.contact-me-directly p a:hover{
+	color: #39B54A;
+
+}
+
+.contact-me-online{
+	color: #ffffff;
+	float: left;
+	margin-left: 150px;
+
+}
+
+.contact-me-online ul{
+	list-style-type: none;
+}
+
+.contact-me-online ul li a{
+	text-decoration: none;
+	color: #00FF66;
+	font-size: 25px;
+	line-height: 35px;
+}
+
+.contact-me-online ul li a:hover{
+	color: #39B54A;
+}
+
+.port-edu p{
+	font-size: 22px;
+	line-height: 40px;
+}
+
+#port-skills li{
+	list-style-type: none;
+	font-size: 25px;
+	line-height: 40px;
+}
+
+.green-2{
+	color: #00FF66;
+}
+
+/*The below Code is for the msg like box/div in the service section of my page*/
+
+.service-container p{
+	position: relative;
+	max-width: 100%;
+	height: 24rem;
+	border: 2px solid #000000;
+	margin: auto;
+	padding: 30px;
+	box-sizing: border-box;
+	background-color: #1abc9c;
+	margin-top: 35px;
+}
+
+.service-container p::after{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-top: 2px solid #000000;
+	border-right: 0px solid #000000;
+	border-bottom: 0px solid #000000;
+	border-left: 2px solid #000000;
+	bottom: 100%;
+	left: 20%;
+	margin-left: -25px;
+	content: '';
+	transform: rotate(45deg);
+	margin-bottom: -25px;
+	background: #1abc9c;
+}
+
+/*
+This below code is for the same msg like box/div but with a somewhat different style/look of the "pointer" like object
+in the box (its because of this part that it actually makes it seem/look like a msg box/div)
+.service-container p::after{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-top: 0px solid #000000;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+	border-left: 0px solid #000000;
+	top: 100%;
+	left: 50%;
+	margin-left: -25px;
+	content: '';
+	transform: rotate(45deg);
+	margin-top: -25px;
+	background: #1abc9c;
+}*/
+
+html{
+	scroll-behavior: smooth;
+}
+
+.footer-begin{
+	text-decoration: none;
+	color: #ff6347;
+}
+
+
+
+
+/*For the First/Front Page of Portfolio with my name and info in the middle inside a transparent box*/
+.box{
+	width: 450px;
+	background: rgba(0,0,0,0.4);
+	padding: 40px;
+	padding-top: 85px;
+	text-align: center;
+	margin: auto;
+	color: #ffffff;
+	font-family: 'Century Gothic', sans-serif;
+}
+.box-img{
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+}
+.box h1{
+	font-size: 40px;
+	letter-spacing: 4px;
+	font-weight: 100;
+}
+
+.box h5{
+	font-size: 20px;
+	letter-spacing: 3px;
+	font-weight: 100;
+}
+
+.box p{
+	text-align: justify;
+}
+
+.box ul{
+	margin: 0;
+	padding: 0;
+}
+
+.box li{
+	display:inline-block;
+	margin: 6px;
+	list-style: none;
+}
+
+.box li a{
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 60px;
+	transition: all ease-in-out 250ms;
+}
+
+.box li a:hover{
+	color: #b9b9b9;
+	
+}
+
+
+/*For Responsive Navigation-Bar*/
+.checkbtn{
+	font-size: 30px;
+	color: #000000;
+	float: right;
+	line-height: 80px;
+	margin-right: 60px;
+	cursor: pointer;
+	display: none;
+}
+
+#check{
+	display: none;
+}
+
+.container-1{
+	display: none;
+}
+
+@media (max-width: 1250px){
+	.first{
+		height: 150vh;
+	}
+
+	.about-area,.port-area, .services-area, .contact-area{
+		position: relative;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		flex-direction: row;
+		width: 100%;
+		height: 60rem;
+	}
+
+	.about-area{
+		height:60rem;
+	}
+
+	.port-area{
+		height: 60rem;
+	}
+
+	.services-area{
+		height: 50rem;
+	}
+
+	.service-container p{
+		height: 27rem;
+	}
+
+	.contact-me-directly{
+		margin-left: 50px;
+	}
+
+	.contact-me-directly p{
+		margin-left: 21px;
+	}
+
+	.contact-me-online{
+		color: #ffffff;
+		margin-left: 50px;
+	}
+}
+
+@media (max-width: 1100px){
+	.logo{
+		font-size: 40px;
+	}
+
+	.nav-all{
+		margin-right: 2%;
+	}
+
+	.container-1{
+		display: none;
+	}
+
+	/*Work Not related to Navigation starts from below:*/
+
+	.first{
+		height: 150vh;
+	}
+
+	.about-area,.port-area, .services-area, .contact-area{
+		position: relative;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		flex-direction: row;
+		width: 100%;
+		height: 60rem;
+	}
+
+	.about-area{
+		height:60rem;
+	}
+
+	.port-area{
+		height: 60rem;
+	}
+
+	.services-area{
+		height: 50rem;
+	}
+
+	.service-container p{
+		height: 20rem;
+		font-size: 20px;
+		line-height: 30px;
+		padding: 30px;
+		margin-top: 35px;
+	}
+
+	.contact-me-directly{
+		margin-left: 50px;
+	}
+
+	.contact-me-directly p{
+		margin-left: 21px;
+	}
+
+	.contact-me-online{
+		color: #ffffff;
+		margin-left: 50px;
+	}
+}
+
+@media(max-width: 965px){
+	.checkbtn{
+		display: block;
+	}
+
+	.nav-all{
+		display: none;
+	}
+
+	.container-1{
+		display: block;
+		text-align: center;
+		place-items: center;
+		position: fixed;
+		top: 70px;
+		height: 80px;
+		width: 100%;
+		left: -120%;
+		line-height: 80px;
+		background: #ffffff;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+		transition: all .5s;
+	}
+
+	.container-1 .menu-1{
+		display: flex;
+		position: relative;
+	}
+
+	.container-1 .menu-1 li{
+		list-style: none;
+		flex: 1;
+		font-size: 30px;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.container-1 .menu-1 li a{
+		color: #1d1f20;
+		transition: color 0.3s ease;
+	}
+
+	.container-1 .menu-1 li:hover a{
+		color: #f23b26;
+	}
+
+	.container-1 .menu-1 li:first-child a{
+		color: #f23b26;
+	}
+
+	.container-1 .menu-1 .line-1{
+		position: absolute;
+		height: 5px;
+		width: 20%;
+		background: #f23b26;
+		left: 0;
+		bottom: 0;
+		transition: all 0.3s ease;
+	}
+
+	.container-1 .menu-1 li:nth-child(2):hover ~ .line-1{
+		left: 20%;
+	}
+
+	.container-1 .menu-1 li:nth-child(3):hover ~ .line-1{
+		left: 40%;
+	}
+
+	.container-1 .menu-1 li:nth-child(4):hover ~ .line-1{
+		left: 60%;
+	}
+
+	.container-1 .menu-1 li:nth-child(5):hover ~ .line-1{
+		left: 80%;
+	}
+
+	#check:checked ~ .container-1{
+		left: 0;
+	}
+
+
+	/*Work not related to Navigation starts from below:*/
+	.first{
+		height: 150vh;
+	}
+
+	.about-area,.port-area, .services-area, .contact-area{
+		position: relative;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		flex-direction: row;
+		width: 100%;
+		height: 70rem;
+	}
+
+	.about-area{
+		height: 65rem;
+	}
+
+	.port-area{
+		height: 65rem;
+	}
+
+	.service-container p{
+		height: 46rem;
+		font-size: 25px;
+		line-height: 50px;
+		padding: 30px;
+		margin-top: 35px;
+	}
+
+	.contact-me-directly{
+		margin-left: 50px;
+	}
+
+	.contact-me-directly p{
+		margin-left: 21px;
+	}
+
+	.contact-me-online{
+		color: #ffffff;
+		margin-left: 50px;
+	}
+
+}
+
+@media (max-width: 720px){
+	.checkbtn{
+		display: block;
+	}
+
+	.nav-all{
+		display: none;
+	}
+
+	.container-1{
+		display: block;
+		text-align: center;
+		place-items: center;
+		position: fixed;
+		top: 70px;
+		height: 80px;
+		width: 100%;
+		left: -120%;
+		line-height: 80px;
+		background: #ffffff;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+		transition: all .5s;
+	}
+
+	.container-1 .menu-1{
+		display: flex;
+		position: relative;
+	}
+
+	.container-1 .menu-1 li{
+		list-style: none;
+		flex: 1;
+		font-size: 30px;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	.container-1 .menu-1 li a{
+		color: #1d1f20;
+		transition: color 0.3s ease;
+	}
+
+	.container-1 .menu-1 li:hover a{
+		color: #f23b26;
+	}
+
+	.container-1 .menu-1 li:first-child a{
+		color: #f23b26;
+	}
+
+	.container-1 .menu-1 .line-1{
+		position: absolute;
+		height: 5px;
+		width: 20%;
+		background: #f23b26;
+		left: 0;
+		bottom: 0;
+		transition: all 0.3s ease;
+	}
+
+	.container-1 .menu-1 li:nth-child(2):hover ~ .line-1{
+		left: 20%;
+	}
+
+	.container-1 .menu-1 li:nth-child(3):hover ~ .line-1{
+		left: 40%;
+	}
+
+	.container-1 .menu-1 li:nth-child(4):hover ~ .line-1{
+		left: 60%;
+	}
+
+	.container-1 .menu-1 li:nth-child(5):hover ~ .line-1{
+		left: 80%;
+	}
+
+	#check:checked ~ .container-1{
+		left: 0;
+	}
+
+
+	/*Work not related to Navigation starts from below:*/
+	.first{
+		height: 150vh;
+	}
+
+	.about-area,.port-area, .services-area, .contact-area{
+		position: relative;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		flex-direction: row;
+		width: 100%;
+		height: 70rem;
+	}
+
+	.about-area{
+		height: 75rem;
+	}
+
+	.port-area{
+		height: 78rem;
+	}
+
+	.service-container p{
+		height: 36rem;
+		font-size: 20px;
+		line-height: 30px;
+		padding: 30px;
+		margin-top: 35px;
+	}
+
+	.contact-me-directly{
+		margin-left: 50px;
+	}
+
+	.contact-me-directly p{
+		margin-left: 21px;
+	}
+
+	.contact-me-online{
+		color: #ffffff;
+		margin-left: 50px;
+	}
+
+}
+
+/*For Footer*/
+footer{
+	display: flex;
+	padding-left: 5px;
+	background-color: #D4D7DE;
+
+}
+
+
+
+
+
